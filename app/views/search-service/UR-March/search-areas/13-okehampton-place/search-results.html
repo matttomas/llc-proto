@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% from "table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block header %}
+  <header class="govuk-header " role="banner" data-module="header">
+    <div class="govuk-header__container govuk-width-container">
+
+      <div class="govuk-header__logo">
+        <a href="#" class="govuk-header__link govuk-header__link--homepage">
+          <span class="govuk-header__logotype">
+
+            <svg role="presentation" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 132 97" height="32" width="36">
+              <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+
+              <image src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image"></image>
+            </svg>
+            <span class="govuk-header__logotype-text">
+              GOV.UK
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="govuk-header__content">
+
+        <a href="../../start.html" class="govuk-header__link govuk-header__link--service-name">
+          Search for local land charges
+        </a>
+
+        <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="../../register.html">
+          Register
+        </a>
+
+        <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="../../sign-in.html">
+          Sign in
+        </a>
+
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://wh.snapsurveys.com/s.asp?k=153028289271">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Search results
+    </h1>
+
+    <img src="/../../../public/images/13-okehampton-place.png" height="150px" width="300px">
+    <p class="govuk-body">Not the right area? <a href="../../search.html">Search again on the map</a></p>
+
+    <p class="govuk-body">There are <span class="govuk-!-font-weight-bold">3 local land charges</span> that affect the land you searched.</p>
+
+    <div id="benefits-table">
+      <hr class="govuk-section-break section-break--visible">
+      <div class="benefits-title">
+        <h2= class="govuk-heading-m govuk-!-margin-top-2" >Benefits of a £15 official search result</h2>
+      </div>
+      <a class="govuk-link govuk-body benefits-toggle" href="#benefits-content">Hide</a>
+      <div class="benefits-table" id="benefits-content">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Secure(tamper-proof) document - ensuring authenticity</li>
+          <li>Digitally signed and guaranteed by HM Land Registry</li>
+          <li>Local land charge boundary on a map</li>
+          <li>Link to source documents, where available</li>
+          <li>Free repeat search of the same area (must be done within 6 months)</li>
+        </ul>
+      </div>
+      <hr class="govuk-section-break section-break--visible">
+    </div>
+
+    <p class="govuk-heading-m govuk-!-margin-top-7">Planning</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Charge</th>
+          <th class="govuk-table__header right" scope="col">Creation date</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="row"><a href="charge-details.html">Conditional planning consent</a></th>
+          <td class="govuk-table__cell right">10 November 2017</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="row"><a href="charge-details-1.html">Tree preservation order</a></th>
+          <td class="govuk-table__cell right">Not provided</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="govuk-heading-m govuk-!-margin-top-7">Other</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Charge</th>
+          <th class="govuk-table__header right" scope="col">Creation date</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="row"><a href="charge-details-2.html">Smoke control order</a></th>
+          <td class="govuk-table__cell right">1 April 1984</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="govuk-body"><a href="https://wh.snapsurveys.com/s.asp?k=153028289271">what did you think of this service?</a> (takes 30 seconds)</p>
+
+    <p class="govuk-body">
+      © Crown copyright and database right 2018. Ordnance Survey licence no.
+      100026316. Use of address and mapping data (including the link between the address and its location)
+      is subject to Ordnance Survey licence terms and conditions (link opens in new tab).
+    </p>
+
+  </div>
+  <div class="column-pay">
+    <form action="check-area.html">
+      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-2">Download your official search result for £15</h3>
+      <button type="submit" class="govuk-button button-full-width">
+        Pay now
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    $('.benefits-toggle').on('click', function(e) {
+      e.preventDefault()
+      var $target = $($(this).attr('href'))
+      $target.toggleClass('govuk-visually-hidden')
+      if ($target.hasClass('govuk-visually-hidden')) {
+        $(this).text('Show')
+      } else {
+        $(this).text('Hide')
+      }
+
+
+    })
+  </script>
+{% endblock %}

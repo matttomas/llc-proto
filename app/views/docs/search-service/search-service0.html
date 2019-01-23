@@ -1,0 +1,33 @@
+{% extends "layout-unbranded.html" %}
+
+{% block pageTitle %}
+  Prototype - Local Land Charges
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+{% block main %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-padding-top-5">Search service prototypes</h1>
+
+        <table class="govuk-table list">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row" onclick="window.location='#';">
+              <hr class="govuk-section-break govuk-section-break--visible">
+              <th class="govuk-table__header version" scope="row">As live - October</th>
+              <td class="govuk-table__cell status right"><span class="completed">Tested</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

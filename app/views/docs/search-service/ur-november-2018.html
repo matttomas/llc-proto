@@ -1,0 +1,239 @@
+{% extends "layout-unbranded.html" %}
+
+{% block pageTitle %}
+  Prototype - Local Land Charges
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+{% block main %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-padding-top-5">UR November 2018</h1>
+
+      <h3 clas="govuk-heading-s"><a class="govuk-link" href="/search-service/UR-November/start.html">View Prototype</a><span class="completed govuk-!-margin-3">Tested</span></h3>
+
+      <h2 class="govuk-heading-m">Summary of Changes</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Search history screen</li>
+        <li>Search by title number</li>
+        <li>Add pay now button to individual charges</li>
+        <li>New map design to show scotland wil never be migrated</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <h3 class="govuk-heading-l">Scenarios</h3>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">Task 1</h3>
+      <p class="govuk-body">Complete an official search on a preset (hardcoded) property.</p>
+      <ul class="govuk-list govuk-list">
+        <li>Use following info</li>
+        <li>Postcode: <span class="govuk-!-font-weight-bold">EX4 1AY</span></li>
+        <li>Title Number: <span class="govuk-!-font-weight-bold">DN123</span></li>
+        <li>Payment Card: <span class="govuk-!-font-weight-bold">Any fake card</span></li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">Task 2</h3>
+      <p class="govuk-body">Repeat the official search they just completed and download the results.</p>
+      <ul class="govuk-list govuk-list">
+        <li>Users will need to log in via the log in link in the top right of the header bar</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Search History Table</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a citzen/conveyancer<br>
+        I want to be able to quickly find a search i have done in the past<br>
+        So that i can easily view or repeat it</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Old design</h3>
+      <img src="/../../public/images/docs/ur-november-2018/search-history-old.png" height="100%" width="100%">
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>user found it difficult to distinguish where one search starts and ends</li>
+        <li>users struggled to find the drop down and where confused what it did when they did</li>
+        <li>users struggled to find the search they were intrested in using the title number only</li>
+        <li>the table was too congested and full of unesccary infomration</li>
+        <li>the users cares about what date they have until to repeat (ASSUMPTION)</li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">New design</h3>
+      <img src="/../../public/images/docs/ur-november-2018/search-history-new.png" height="100%" width="100%">
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>every other search is shaded grey</li>
+        <li>change plus to down arrow and relocated for expansion</li>
+        <li>user inputted search area description in left hand column rather than title number</li>
+        <li>don't list number of repeats</li>
+        <li>list expiry date</li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All users could easily find the charge they were intrested in</li>
+        <li>All users used the address/serarch area description to find the search they are intrested in</li>
+        <li>All users were able to repeat a search</li>
+        <li>Alot of users struggled to find where they would repeat a search from and needed prompting to where to log in</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Search by title number</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a proffesional user<br>
+        I want to be able to search by title number<br>
+        So that i can ensure im looking at the property im currently dealing with</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Without</h3>
+      <img src="/../../public/images/docs/ur-november-2018/search-old.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">With</h3>
+      <img src="/../../public/images/docs/ur-november-2018/search-new.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-full govuk-!-margin-top-3">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All users used the postcode search function</li>
+        <li>1 out of 7 partcipants said they would ocassionaly use the search by postcode function</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Search area description on download page</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a Search service user<br>
+        I want to see the address searched on the download screen<br>
+        So that im sure im downloading the correct search result
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Without</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-old.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">With</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-new.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-3">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All partcipants were able to find easily and succesfully download the search result PDF</li>
+        <li>All partcipants would use a PDF unless other format is specfically requested from thier client</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Add pay now button to each individual charge</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a Search service user<br>
+        I want to see the address searched on the download screen<br>
+        So that im sure im downloading the correct search result
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Without</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-old.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">With</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-new.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-3">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All partcipants were able to find easily and succesfully download the search result PDF</li>
+        <li>All partcipants would use a PDF unless other format is specfically requested from thier client</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Map redesign</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a Search service user<br>
+        I want to see the address searched on the download screen<br>
+        So that im sure im downloading the correct search result
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Without</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-old.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">With</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-new.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-3">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All partcipants were able to find easily and succesfully download the search result PDF</li>
+        <li>All partcipants would use a PDF unless other format is specfically requested from thier client</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Search Certificate redesign</h3>
+      <h3 class="govuk-heading-s">User story</h3>
+      <p class="govuk-body">As a Search service user<br>
+        I want to see the address searched on the download screen<br>
+        So that im sure im downloading the correct search result
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">Without</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-old.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">With</h3>
+      <img src="/../../public/images/docs/ur-november-2018/download-new.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-3">
+      <h3 class="govuk-heading-s">Resarch Findings</h3>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>All partcipants were able to find easily and succesfully download the search result PDF</li>
+        <li>All partcipants would use a PDF unless other format is specfically requested from thier client</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
