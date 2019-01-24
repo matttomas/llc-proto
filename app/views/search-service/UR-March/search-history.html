@@ -91,20 +91,25 @@ h{% extends "layout.html" %}
       <section class="search-history-tabs__panel" id="active">
         <div class="govuk-!-margin-top-8">
           <div class="reduced-column-width">
-            <p class="govuk-body">Search by reference</p>
+            <p class="govuk-body">Search by reference or address</p>
             <p class="govuk-body"><a class="govuk-link" href="#">Reset search</a>
           </div>
           <div class="column-two-thirds">
-            <div class="search-bar">
-              <div class="govuk-form-group">
-                <input class="govuk-input govuk-input--width-10" id="search" name="search" type="text">
+
+            <form action="search-history-filtered.html" onsubmit="return checkSearchForm()">
+              <div class="search-bar">
+                <div class="govuk-form-group">
+                  <input class="govuk-input govuk-input--width-10" id="search" name="search" type="text">
+                </div>
+                <div class="search-bar-input">
+                  <button type="submit" class="search-button" role="button">
+                    <span class="govuk-visually-hidden">Search</span>
+                  </button>
+                </div>
               </div>
-              <div class="search-bar-input">
-                <button class="search-button">
-                  <span class="govuk-visually-hidden">Search</span>
-                </button>
-              </div>
-              </div>
+            </form>
+
+
             </div>
           </div>
           <table class="govuk-table">
@@ -120,12 +125,12 @@ h{% extends "layout.html" %}
             <tbody class="govuk-table__body search-history-table">
 <!-- //row 1 -->
               <tr class="govuk-table__row parent-row">
-                <td class="govuk-table__cell govuk-!-font-weight-bold">13 Okehampton Place, Exeter EX4 1AY</td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Land to the East of 1 Okehampton Place, Exeter</td>
                 <td class="govuk-table__cell searches">
                   <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
                 </td>
                 <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2896/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-areas/1-okehampton-place/search-results-refunded">Refunded</a></td>
                 <td class="govuk-table__cell">{{ 'D MMMM YYYY'|dateSixMonthsFromNow() }}</td>
               </tr>
 
@@ -149,7 +154,7 @@ h{% extends "layout.html" %}
                 <td class="govuk-table__cell"></td>
                 <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
                 <td class="govuk-table__cell repeats">
-                  26 March 2019
+                  21 March 2019
                 </td>
               </tr>
 
@@ -178,7 +183,7 @@ h{% extends "layout.html" %}
               </tr>
 <!-- //row 3 -->
               <tr class="govuk-table__row parent-row">
-                <td class="govuk-table__cell govuk-!-font-weight-bold">2 Bonville Close, Exeter EX1 3JS</td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Land to the West of 2 Bonville Close, Exeter EX1 3JS</td>
                 <td class="govuk-table__cell searches">
                   <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
                 </td>
@@ -237,6 +242,300 @@ h{% extends "layout.html" %}
                 <td class="govuk-table__cell"></td>
               </tr>
 
+              <tr class="govuk-table__row parent-row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold"> Land to the North of 4 Okehampton Place, Exeter EX4 1AY</td>
+                <td class="govuk-table__cell searches">
+                  <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2896/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell">{{ 'D MMMM YYYY'|dateSixMonthsFromNow() }}</td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2896/view-nr-3070.html">{{ 'D MMMM YYYY'|formatDate() }}</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 003 071
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 2 -->
+              <tr class="govuk-table__row parent-row tr1">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">5 Okehampton Place, Exeter EX4 1AY</td>
+                <td class="govuk-table__cell">
+                  <button class="view-searches-button tr1"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
+                <td class="govuk-table__cell repeats">
+                  23 March 2019
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2881.html">28 October 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 003 073
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2891.html">26 September 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 003 078
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 3 -->
+              <tr class="govuk-table__row parent-row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">20 Bonville Close, Exeter EX1 3JS</td>
+                <td class="govuk-table__cell searches">
+                  <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell ">
+                </td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2857/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell ">10 January 2019</td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2857/view-nr-2857.html">6 November 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 857
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 4 -->
+              <tr class="govuk-table__row parent-row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold"> Land to the West of 4 Bonville Close, Exeter EX1 3JS</td>
+                <td class="govuk-table__cell searches">
+                  <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell ">
+                </td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2857/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell ">9 January 2019</td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2857/view-nr-2857.html">16 August 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 860
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row parent-row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">13 Okehampton Place, Exeter EX4 1AY</td>
+                <td class="govuk-table__cell searches">
+                  <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2896/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell">{{ 'D MMMM YYYY'|dateSixMonthsFromNow() }}</td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2896/view-nr-3070.html">{{ 'D MMMM YYYY'|formatDate() }}</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 003 070
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 2 -->
+              <tr class="govuk-table__row parent-row tr1">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Flat 5, Carousel Court, Cowick Street, Exeter EX4 1AB</td>
+                <td class="govuk-table__cell">
+                  <button class="view-searches-button tr1"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
+                <td class="govuk-table__cell repeats">
+                  18 May 2019
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2881.html">30 October 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 881
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2891.html">20 September 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 891
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 3 -->
+              <tr class="govuk-table__row parent-row tr1">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Flat 7, Carousel Court, Cowick Street, Exeter EX4 1AB</td>
+                <td class="govuk-table__cell">
+                  <button class="view-searches-button tr1"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
+                <td class="govuk-table__cell repeats">
+                  26 March 2019
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2881.html">28 December 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 881
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2891.html">26 April 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 891
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 4 -->
+              <tr class="govuk-table__row parent-row tr1">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Flat 10, Carousel Court, Cowick Street, Exeter EX4 1AB</td>
+                <td class="govuk-table__cell">
+                  <button class="view-searches-button tr1"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
+                <td class="govuk-table__cell repeats">
+                  26 March 2019
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2881.html">01 October 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 888
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2891.html">08 September 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 895
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 2 -->
+              <tr class="govuk-table__row parent-row tr1">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">Flat 20, Carousel Court, Cowick Street, Exeter EX4 1AB</td>
+                <td class="govuk-table__cell">
+                  <button class="view-searches-button tr1"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2891/repeat-2891.html">Repeat</a></td>
+                <td class="govuk-table__cell repeats">
+                  26 June 2019
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2881.html">28 July 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 881
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden tr1">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2891/view-nr-2891.html">2 September 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 891
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+<!-- //row 3 -->
+              <tr class="govuk-table__row parent-row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">6 Bonville Close, Exeter EX1 3JS</td>
+                <td class="govuk-table__cell searches">
+                  <button class="view-searches-button"><span class="button-text">View searches</span><span class="search-toggle-button"></span></button>
+                </td>
+                <td class="govuk-table__cell ">
+                </td>
+                <td class="govuk-table__cell "><a class="govuk-link" href="search-results/2857/repeat.html">Repeat</a></td>
+                <td class="govuk-table__cell ">10 January 2019</td>
+              </tr>
+
+              <tr class="govuk-table__row govuk-visually-hidden">
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell ">
+                  <a class="govuk-link" href="search-results/2857/view-nr-2857.html">6 July 2018</a>
+                </td>
+                <td class="govuk-table__cell">
+                  000 002 857
+                </td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+
             </tbody>
           </table>
         </section>
@@ -269,6 +568,17 @@ h{% extends "layout.html" %}
     //   $(this).closest('tr').nextUntil('.parent-row').toggleClass('govuk-visually-hidden')
     //   $(this).toggleClass('row-toggle-button-expanded')
     // })
+
+    function checkSearchForm () {
+      var searchTerm = document.getElementById('search').value
+
+      if (searchTerm.length > 0) {
+        // Could use checkPostcode() function here in future to route people accordingly
+        return
+      } else {
+        return false
+      }
+    }
 
   </script>
 {% endblock %}
