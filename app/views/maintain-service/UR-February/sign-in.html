@@ -32,11 +32,11 @@ h{% extends "layout.html" %}
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
-          Register
+          Sign out
         </a>
 
         <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
-          Sign in
+          LA Admin
         </a>
 
       </div>
@@ -64,7 +64,8 @@ h{% extends "layout.html" %}
     <h1 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">Sign in</h1>
 
     <form action="options.html">
-      <input type="hidden" name="law-name" value="Acquisition of Land Act 1981 schedule 1 paragraph 6">
+      <input type="hidden" name="law-name" id="law-name" value="Town and Country Planning Act 1990 section 70">
+      <input type="hidden" name="law-category" value="Planning permission ">
       <div class="govuk-form-group">
         <label class="govuk-label govuk-!-width-one-half" for="one-half">
           Email

@@ -31,12 +31,12 @@
           Maintain LLC
         </a>
 
-        <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="../../register.html">
-          Register
+        <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
+          Sign out
         </a>
 
-        <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="../../sign-in.html">
-          Sign in
+        <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
+          LA Admin
         </a>
 
       </div>
@@ -63,7 +63,7 @@
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Is this the charge address?</h1>
 
-    <p><b>1 Okehampton Place, Exeter EX4 1AY</b></p>
+    <p><b>{{ data['search-location']}}</b></p>
 
 
     <form action="charge-expire.html">
@@ -118,7 +118,7 @@
                       <span id="description-hint" class="govuk-hint">
                         For example, 'land to the north of the bypass'.
                       </span>
-                      <textarea class="govuk-textarea" id="description" name="description" rows="5" aria-describedby="description-hint"></textarea>
+                      <textarea class="govuk-textarea" id="search-location" name="search-location" rows="5" aria-describedby="description-hint"></textarea>
                       <span id="description-hint" class="govuk-hint">
                         Answer must be shorter than 1000 characters (about 160 words)'.
                       </span>

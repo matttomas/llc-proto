@@ -1,9 +1,9 @@
-{% extends "layout.html" %}
+h{% extends "layout.html" %}
 
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Confirm details
+  Search by reference - Maintain local land charges
 {% endblock %}
 
 {% block header %}
@@ -50,54 +50,87 @@
     tag: {
       text: "beta"
     },
-    html: 'This is a new service – your <a class="govuk-link" href="https://wh.snapsurveys.com/s.asp?k=153028289271">feedback</a> will help us to improve it.'
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">
-      Confirm details
+    <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-7">
+      View local land charge
     </h1>
 
-    <p>Confirm that the information below is correct</p>
+    <div class="govuk-inset-text">
+      <p><a class="govuk-link" href="#">Update charge</a></p>
+      <p><a class="govuk-link" href="#">Cancel charge</a></p>
+    </div>
 
-    <form action="user-been-added.html">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body">HM Land Registry reference</P>
+        <p class="govuk-body">Category</p>
+        <p class="govuk-body">Planning category</P>
+        <p class="govuk-body">Law</p>
+        <p class="govuk-body">Legal document</P>
+        <p class="govuk-body">Description</p>
+        <p class="govuk-body">Originating authority</P>
+        <p class="govuk-body">Registered on</p>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body"><b>LLC-1SRO</b></p>
+        <p class="govuk-body"><b>Other</b></p>
+        <p class="govuk-body"><b>Smoke control order</b></p>
+        <p class="govuk-body"><b>Clean Air Act 1993 section 18</b></p>
+        <p class="govuk-body"><b>Order</b></p>
+        <p class="govuk-body"><b>SCO for Exeter</b></p>
+        <p class="govuk-body"><b>HM Land Registry</b></p>
+        <p class="govuk-body"><b>13 June 2018</b></p>
+        <a class="govuk-link govuk-!-margin-bottom-10" href="#">View history</a>
+      </div>
+    </div>
+
+    <br><hr><br>
 
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>First name</b></th>
-          <td class="govuk-table__cell">{{data['first-name']}}</td>
         </tr>
         <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Last name</b></th>
-          <td class="govuk-table__cell">{{data['last-name']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>email</b></th>
-          <td class="govuk-table__cell">{{data['email']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Authority</b></th>
-          <td class="govuk-table__cell">Blackpool Borough Council</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Role</b></th>
-          <td class="govuk-table__cell">{{data['user-authority']}}</td>
+          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third">Location</th>
+          <td class="govuk-table__cell"><b>3 X smoke contol orders.</b></td>
+          <td class="govuk-table__cell"><img src="/../../../public/images/exeterSCO.png" height="150px" width="300px"></td>
         </tr>
       </tbody>
     </table>
 
-    <p><a class="govuk-link" href="user-add-status.html">Change user details</a></p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body">Creation date</P><br>
+        <p class="govuk-body">Expiry date</p>
+      </div>
 
-      <button type="submit" class="govuk-button">
-        Confirm and add user
-      </button>
-    </form>
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body"><b>13 June 2018</b></p><br>
+        <p class="govuk-body"><b>Does not expire</b></p>
+      </div>
+    </div>
 
-  </div>
-</div>
+    <hr><br>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body">Source information</P><br>
+        <p class="govuk-body">Authority reference</p>
+          <a class="govuk-link" href="options.html">Return to main menu</a>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body"><b>www.exetercitycouncil.co.uk</b></p><br>
+        <p class="govuk-body"><b>exSmoke98789</b></p>
+      </div>
+    </div>
+
+
+
+
 {% endblock %}

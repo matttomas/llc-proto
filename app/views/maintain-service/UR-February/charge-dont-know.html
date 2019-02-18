@@ -1,9 +1,9 @@
-{% extends "layout.html" %}
+h{% extends "layout.html" %}
 
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Confirm details
+  Confirm Law - Maintain local land charges
 {% endblock %}
 
 {% block header %}
@@ -50,7 +50,7 @@
     tag: {
       text: "beta"
     },
-    html: 'This is a new service – your <a class="govuk-link" href="https://wh.snapsurveys.com/s.asp?k=153028289271">feedback</a> will help us to improve it.'
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 {% endblock %}
 
@@ -58,46 +58,36 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Confirm details
-    </h1>
+  <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-7">
+    Contact HM Land Registry
+  </h1>
 
-    <p>Confirm that the information below is correct</p>
-
-    <form action="user-been-added.html">
-
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>First name</b></th>
-          <td class="govuk-table__cell">{{data['first-name']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Last name</b></th>
-          <td class="govuk-table__cell">{{data['last-name']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>email</b></th>
-          <td class="govuk-table__cell">{{data['email']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Authority</b></th>
-          <td class="govuk-table__cell">Blackpool Borough Council</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Role</b></th>
-          <td class="govuk-table__cell">{{data['user-authority']}}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><a class="govuk-link" href="user-add-status.html">Change user details</a></p>
-
-      <button type="submit" class="govuk-button">
-        Confirm and add user
-      </button>
-    </form>
-
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      You can't add a charge unless you know the category.
+    </strong>
   </div>
+
+  <div class="govuk-inset-text">
+    <p><a class="govuk-link" href="https://help.landregistry.gov.uk/app/contactus_LLC" target="_blank">Contact HM Land Registry (email form)</a> to get a category for this charge</p>
+  </div>
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why can't I add this charge without a category?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      If someone takes a dispute to court that involves this charge, they will need to know what category of charge it is.
+      <br><br>
+      This tells us the legal right or restriction on land. Without this information, we don't know what the charge does.
+    </div>
+  </details>
+
+
+</div>
 </div>
 {% endblock %}

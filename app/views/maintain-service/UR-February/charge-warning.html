@@ -3,7 +3,7 @@
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Confirm details
+  warning
 {% endblock %}
 
 {% block header %}
@@ -45,59 +45,59 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="https://wh.snapsurveys.com/s.asp?k=153028289271">feedback</a> will help us to improve it.'
-  }) }}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="https://wh.snapsurveys.com/s.asp?k=153028289271">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Confirm details
-    </h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">You might be adding a charge outside your authority</h1>
 
-    <p>Confirm that the information below is correct</p>
+      <br>  <br>
 
-    <form action="user-been-added.html">
+    <form action="charge-address.html">
 
-    <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>First name</b></th>
-          <td class="govuk-table__cell">{{data['first-name']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Last name</b></th>
-          <td class="govuk-table__cell">{{data['last-name']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>email</b></th>
-          <td class="govuk-table__cell">{{data['email']}}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Authority</b></th>
-          <td class="govuk-table__cell">Blackpool Borough Council</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Role</b></th>
-          <td class="govuk-table__cell">{{data['user-authority']}}</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="warning-inset-text govuk-!-margin-bottom-30">
+        <b>You can:</b>
+        <ul class="govuk-list govuk-list--bullet">
+        <li><b>edit your extent (so it is not outside your authority), or</b></li>
+        <li><b>add this charge, but it won't show on a search result until the authority has moved to this register</b></li>
+      </ul>
+      </div>
 
-    <p><a class="govuk-link" href="user-add-status.html">Change user details</a></p>
+      <br>  <br>
 
-      <button type="submit" class="govuk-button">
-        Confirm and add user
-      </button>
-    </form>
+      <hr>
 
+      <br>
+
+      <div class="govuk-form-group">
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+              I have the authority to add a charge in this location.
+            </label>
+          </div>
+        </div>
+    </div>
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    <p>or <a class="" href="charge-search.html">edit the extent</a>
   </div>
 </div>
 {% endblock %}

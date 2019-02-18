@@ -32,11 +32,11 @@ h{% extends "layout.html" %}
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
-          Register
+          Sign out
         </a>
 
         <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
-          Search
+          LA Admin
         </a>
 
       </div>
@@ -59,37 +59,35 @@ h{% extends "layout.html" %}
 
 <script>
 
-  function checkSearchForm () {
-    var searchTerm = document.getElementById('search').value
+  function setLocation (location) {
+    document.getElementById('search-location1').value = location;
+    alert(document.getElementById('search-location1').value);
+    }
 
-    if (searchTerm.length > 0) {
-     document.getElementById('results-list').classList.remove('govuk-visually-hidden');
-      return false
-    } else {
+  function checkSearchForm () {
+    var searchTerm = document.getElementById('search').value;
+    var searchTermIgnorCase = searchTerm.ignoreCase;
+
+    if (searchTerm.toUpperCase() == 'EX4 1AY')
+    {
+      document.getElementById('results-list-okehampton').classList.remove('govuk-visually-hidden');
+      document.getElementById('results-list-exeter').classList.add('govuk-visually-hidden');
+      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
+       return false
+    }
+    else if (searchTerm.toUpperCase() == 'CHEYNEGATE LANE')
+    {
+      document.getElementById('results-list-exeter').classList.remove('govuk-visually-hidden');
+      document.getElementById('results-list-okehampton').classList.add('govuk-visually-hidden');
+      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
+       return false
+    }
+    else {
       document.getElementById('error-panel').classList.remove('govuk-visually-hidden');
       return false
     }
   }
 
-
-function changeImages()
-
-{var image =  document.getElementById("map1");
- var button = document.getElementById("button1")
-
-    if (image.getAttribute('src') == "../../public/images/map.png")
-    {
-        image.src = "/../../public/images/search-areas/1-okehampton-place-title-number-1.png";
-    }
-    else if (image.getAttribute('src') == "/../../public/images/search-areas/1-okehampton-place-title-number-1.png")
-    {
-        image.src = "/../../public/images/search-areas/1-okehampton-place-title-number-2.png";
-    }
-    else {
-      image.src = "/../../public/images/search-areas/1-okehampton-place-title-number-3.png";
-      button
-    }
-}
 
 </script>
 <div class="govuk-width-container">
@@ -135,7 +133,7 @@ function changeImages()
 
     <p class="govuk-body-s govuk-!-margin-top-6">Use the buttons on this map to draw the charge extent.</p>
 
-    <p class="govuk-body-s">Do you have an extent saved on file? <a class="govuk-link" href="#">Upload the file</a></p>
+    <p class="govuk-body-s">Do you have an extent saved on file? <a class="govuk-link" href="charge-upload-shape.html">Upload the file</a></p>
 
     <div class="govuk-inset-text">
       You have added <b>0 extents</b> (polygons, points or lines) out of 500 possible extents.
@@ -154,67 +152,86 @@ function changeImages()
       </div>
     </div>
 
-    <div class=" govuk-visually-hidden" id="results-list">
+    <div class=" govuk-visually-hidden" id="results-list-okehampton">
       <span class="govuk-body govuk-!-font-size-19"><b>Choose an address from the list</b></span>
 
       <div class="address">
         <ul class="govuk-list">
           <li>
-            <a class="govuk-link govuk-!-font-size-16" onclick="changeImages()" href="#">1 Okehampton Place, Exeter EX4 1AY</a>
+            <form id="form1Okehampton" action="charge-search-address-okehampton.html">
+              <input type="hidden" name="search-location" id="search-location" value="1 Okehampton Place, Exeter EX4 1AY" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form1Okehampton').submit();">1 Okehampton Place, Exeter EX4 1AY</a>
+            </form>
           </li>
           <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">2 Okehampton Place, Exeter EX4 1AY</a>
+            <form id="form2Okehampton" action="charge-search-address-okehampton.html">
+              <input type="hidden" name="search-location" id="search-location" value="2 Okehampton Place, Exeter EX4 1AY" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form2Okehampton').submit();">2 Okehampton Place, Exeter EX4 1AY</a>
+            </form>
           </li>
           <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">3 Okehampton Place, Exeter EX4 1AY</a>
+            <form id="form3Okehampton" action="charge-search-address-okehampton.html">
+              <input type="hidden" name="search-location" id="search-location" value="3 Okehampton Place, Exeter EX4 1AY" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form3Okehampton').submit();">3 Okehampton Place, Exeter EX4 1AY</a>
+            </form>
           </li>
           <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">4 Okehampton Place, Exeter EX4 1AY</a>
+            <form id="form4Okehampton" action="charge-search-address-okehampton.html">
+              <input type="hidden" name="search-location" id="search-location" value="4 Okehampton Place, Exeter EX4 1AY" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form4Okehampton').submit();">4 Okehampton Place, Exeter EX4 1AY</a>
+            </form>
           </li>
           <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">5 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">6 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">7 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">Network Rail, 8a Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">9 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">10 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">11 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">12 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">13 Okehampton Place, Exeter EX4 1AY</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-!-font-size-16" href="search-areas/13-okehampton-place/area-selection.html">14 Okehampton Place, Exeter EX4 1AY</a>
+            <form id="form5Okehampton" action="charge-search-address-okehampton.html">
+              <input type="hidden" name="search-location" id="search-location" value="5 Okehampton Place, Exeter EX4 1AY" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form5Okehampton').submit();">5 Okehampton Place, Exeter EX4 1AY</a>
+            </form>
           </li>
       </div>
       <p></p>
     </div>
 
-  <form action="charge-address.html">
-    <button type="submit" class="govuk-button">
+    <div class=" govuk-visually-hidden" id="results-list-exeter">
+      <span class="govuk-body govuk-!-font-size-19"><b>Choose an address from the list</b></span>
+
+      <div class="address">
+        <ul class="govuk-list">
+          <li>
+            <form id="form1exeter" action="charge-search-address-exeter.html">
+              <input type="hidden" name="search-location" id="search-location" value="1 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form1exeter').submit();">1 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN</a>
+            </form>
+          </li>
+          <li>
+            <form id="form2exeter" action="charge-search-address-exeter.html">
+              <input type="hidden" name="search-location" id="search-location" value="2 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form2exeter').submit();">2 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN</a>
+            </form>
+          </li>
+          <li>
+            <form id="form3exeter" action="charge-search-address-exeter.html">
+              <input type="hidden" name="search-location" id="search-location" value="3 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form3exeter').submit();">3 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN</a>
+            </form>
+          </li>
+          <li>
+            <form id="form4exeter" action="charge-search-address-exeter.html">
+              <input type="hidden" name="search-location" id="search-location" value="4 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN" />
+              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form4exeter').submit();">4 Wottons Cottages, Cheynegate Lane, Exeter EX4 8QN</a>
+            </form>
+          </li>
+      </div>
+      <p></p>
+    </div>
+
+    <button type="submit" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled">
       Continue
     </button>
-  </form>
 
   </div>
 
   <div id="map" class="two-thirds-map">
-    <img src="../../public/images/map.png" width="100%" height="100%" id="map1" onclick="changeImages()"><br />
+    <img src="../../public/images/map.png" width="100%" height="100%""><br />
   </div>
 
 </div>

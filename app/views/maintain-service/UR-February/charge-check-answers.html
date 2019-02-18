@@ -31,12 +31,12 @@
           Maintain LLC
         </a>
 
-        <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="../../register.html">
-          Register
+        <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
+          Sign out
         </a>
 
-        <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="../../sign-in.html">
-          Sign in
+        <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
+          LA Admin
         </a>
 
       </div>
@@ -87,33 +87,33 @@
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Extent</b></th>
-          <td class="govuk-table__cell"><img src="/../../../public/images/land-beside-1-okehampton-place.png" height="150px" width="300px"></td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell"><img src="/../../../public/images/Land-east-Cheynegate.png" height="150px" width="300px"></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-search.html">Change</a></td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Location</b></th>
-          <td class="govuk-table__cell">1 Okehampton Place,<br> Exeter <br>EX4 1AY</td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell">{{data['search-location']}}</td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-address.html">Change</a></td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Expiry date</b></th>
           <td class="govuk-table__cell">Does not expire</td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-expire.html">Change</a></td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Source information</b></th>
           <td class="govuk-table__cell">{{data['source-info']}}</td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-source-info.html">Change</a></td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Authority reference</b></th>
           <td class="govuk-table__cell">{{data['authority-reference']}}</td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-source-info.html">Change</a></td>
         </tr>
         <tr class="govuk-table__row">
           <th class="govuk-table__header govuk-!-font-weight-regular govuk-!-padding-bottom-3 govuk-!-padding-top-3 govuk-!-width-one-third"><b>Description</b></th>
           <td class="govuk-table__cell">{{data['charge-description']}}</td>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="">Change</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-font-size-16" href="charge-description.html">Change</a></td>
         </tr>
       </tbody>
     </table>

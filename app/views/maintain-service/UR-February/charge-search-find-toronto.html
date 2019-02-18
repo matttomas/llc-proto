@@ -60,21 +60,52 @@ h{% extends "layout.html" %}
 <script>
 
   function checkSearchForm () {
-    var searchTerm = document.getElementById('search').value;
-    var searchTermIgnorCase = searchTerm.ignoreCase;
+    var searchTerm = document.getElementById('search').value
 
-    if (searchTerm.toUpperCase() == 'EX4 6LE')
-    {
-      document.getElementById('results-list-exeter').classList.remove('govuk-visually-hidden');
-      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
-       return false
-    }
-    else {
+    if (searchTerm.length > 0) {
+     document.getElementById('results-list').classList.remove('govuk-visually-hidden');
+      return false
+    } else {
       document.getElementById('error-panel').classList.remove('govuk-visually-hidden');
       return false
     }
   }
 
+
+function showSearch()
+  {document.getElementById('accordian').classList.remove('govuk-visually-hidden');
+   document.getElementById('page_text').classList.add('govuk-visually-hidden');
+}
+
+function changeCheckbox() {
+  var planning = document.getElementById('planning')
+  var obstruction = document.getElementById('obstruction')
+  var image =  document.getElementById("map1");
+
+  if (obstruction.checked)
+  {
+    image.src = "/../../public/images/search-areas/toronto-smoke.png";
+  }
+    else if (planning.checked)
+    {
+      if (finance.checked)
+      {
+        image.src = "/../../public/images/search-areas/toronto-planning-finance.png";
+      }
+      else
+      {
+        image.src = "/../../public/images/search-areas/toronto-planning.png";
+      }
+    }
+    else if (finance.checked)
+    {
+      image.src = "/../../public/images/search-areas/toronto-finance.png";
+    }
+    else
+    {
+      image.src = "/../../public/images/search-areas/toronto-blank.png";
+    }
+}
 
 </script>
 <div class="govuk-width-container">
@@ -105,7 +136,6 @@ h{% extends "layout.html" %}
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-4 govuk-!-margin-top-6">Search by postcode, street name or town</h2>
 
-    <form action="*" onsubmit="return checkSearchForm()">
       <div class="search-bar">
         <div class="govuk-form-group">
           <input class="govuk-input govuk-input--width-10" id="search" name="search" type="text">
@@ -116,10 +146,6 @@ h{% extends "layout.html" %}
           </button>
         </div>
       </div>
-    </form>
-
-    <p class="govuk-body-s govuk-!-margin-top-6"><a class="govuk-link" href="charge-search-reference.html">Search by reference</a></p>
-
 
     <div class="govuk-error-summary govuk-!-margin-top-4 govuk-visually-hidden" id="error-panel2" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -134,70 +160,117 @@ h{% extends "layout.html" %}
       </div>
     </div>
 
-    <div class=" govuk-visually-hidden" id="results-list-exeter">
-      <span class="govuk-body govuk-!-font-size-19"><b>Choose an address from the list</b></span>
+    <p class="govuk-body-s govuk-!-margin-top-6"><a class="govuk-link" href="">Search by reference</a></p>
 
-      <div class="address">
-        <ul class="govuk-list">
-          <li>
-            <form id="form1Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="1 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form1Toronto').submit();">1 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form2Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="2 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form2Toronto').submit();">2 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form3Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="3 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form3Toronto').submit();">3 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form4Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="4 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form4Toronto').submit();">4 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form5Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="5 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form5Toronto').submit();">5 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form6Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="6 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form6Toronto').submit();">6 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form7Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="7 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form7Toronto').submit();">7 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-          <li>
-            <form id="form8Toronto" action="charge-search-find-toronto.html">
-              <input type="hidden" name="search-location" id="search-location" value="8 Toronto Road, Exeter, EX4 6LE" />
-              <a class="govuk-link govuk-!-font-size-16" href="#" onclick="document.getElementById('form8Toronto').submit();">8 Toronto Road, Exeter, EX4 6LE</a>
-            </form>
-          </li>
-      </div>
-      <p></p>
+    <div class="govuk-!-margin-top-4" id="page_text">
+      <h3 class="govuk-heading-s">This is the map for {{ data['search-location']}}</h3>
+      <p class="govuk-body-s">Use the map controls to draw an extent around the area you want to search.<br><br>You will see a list of charges in this area.</P>
     </div>
 
-    <p class="govuk-body-s">Or use the map controls to find the location you are looking for and draw
-      an extent around the area you want to search. You will see a list of charges in this area.</P>
+    <div class=" govuk-visually-hidden" id="accordian">
+
+      <p class="govuk-body-s govuk-!-font-size-19"><b>3 Charges in this area</b></P>
+
+        <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-1">
+                  Filter this map by
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <a class="govuk-link govuk-!-margin-right-6" href="#">Select all</a><a class="govuk-link" href="#">Deselect all</a>
+              <ul class="govuk-list govuk-!-margin-top-2">
+                <li>
+                  <input type="checkbox" id="planning" checked ">
+                  <label for="planning" class="govuk-body govuk-!-font-size-16">Planning (1)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="finance" checked ">
+                  <label for="planning" class="govuk-body govuk-!-font-size-16">Financial (1)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="obstruction" checked ">
+                  <label for="obstruction" class="govuk-body govuk-!-font-size-16">Light obstruction notice (1)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="cancelled" checked ">
+                  <label for="obstruction" class="govuk-body govuk-!-font-size-16">Show Cancelled charges (1)</label>
+                </li>
+            </div>
+          </div>
+        </div>
+
+      <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-1">
+                Planning (1)
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <div class="address">
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link govuk-!-font-size-16" href="charge-view-planning.html">Authority reference: LLC-3FFJ</a>
+                  <p class="govuk-body-s">7 Toronto Road, Exeter, EX4 6LE</p>
+                </li>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-3">
+                Financial (1)
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <div class="address">
+              <ul class="govuk-list">
+                  <li>
+                    <div style="background-color:#dee0e2">
+                    <span class="govuk-!-font-size-16"><b>CANCELLED</b><span><br>
+                    <a class="govuk-link" href="charge-view-financial.html">Authority reference: LLC-381YXXXXXXXXXXX</a>
+                    <p class="govuk-body-s">7 Toronto Road, Exeter</p>
+                    </div>
+                  </li>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-3">
+                Light obstruction notice (1)
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <div class="address">
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link govuk-!-font-size-16" href="charge-view-obstruction.html">Authority reference: LLC-1SRO</a>
+                  <p class="govuk-body-s">Exeter area</p>
+                </li>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 
   <div id="map" class="two-thirds-map">
-    <img src="../../public/images/map.png" width="100%" height="100%"><br />
+    <img src="/../../public/images/search-areas/toronto-planning.png" width="100%" height="100%" id="map1" onclick="showSearch()"><br />
   </div>
 
 </div>
