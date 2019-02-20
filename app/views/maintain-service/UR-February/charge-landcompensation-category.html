@@ -3,7 +3,7 @@ h{% extends "layout.html" %}
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Choose category - Maintain local land charges
+  Choose financial - Maintain local land charges
 {% endblock %}
 
 {% block header %}
@@ -32,11 +32,11 @@ h{% extends "layout.html" %}
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
-          Register
+          Sign out
         </a>
 
         <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
-          Sign in
+          LA Admin
         </a>
 
       </div>
@@ -56,49 +56,97 @@ h{% extends "layout.html" %}
 
 {% block content %}
 
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-            <h2 class="govuk-heading-l">Choose a charge category</h2>
-
-          <form action="charge-category-function" method="post">
+            <h2 class="govuk-heading-l">Confirm legal document (optional)</h2>
 
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-1" name="charge-category" type="radio" value="Planning" {{checked("charge-category", "Planning")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-1">
-                Planning
+              <input class="govuk-radios__input" id="land-category-1" name="land-category" type="radio" value="Not provided">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Not provided
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-2" name="charge-category" type="radio" value="Financial" {{checked("charge-category", "Financial")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-2">
-                Financial
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Agreement">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Agreement
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="listed-building" {{checked("charge-category", "listed-building")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Listed building
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Certificate">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Certificate
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="land-compensation" {{checked("charge-category", "land-compensation")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Land compensation
+              <input class="govuk-radios__input" id="land-category-1" name="land-category" type="radio" value="Deed">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Deed
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="housing" {{checked("charge-category", "housing")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Housing
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Direction">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Direction
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="other" {{checked("charge-category", "other")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Other
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Licence">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Licence
               </label>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="land-category-1" name="land-category" type="radio" value="List">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                List
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Notice">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Notice
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Licence">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Order
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Planning permission">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Planning permission
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Resolution">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Resolution
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="land-category-1" name="land-category" type="radio" value="Scheme">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Scheme
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Transfer">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Transfer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="building-category-1" name="building-category" type="radio" value="Undertaking">
+              <label class="govuk-label govuk-radios__label" for="land-category-1">
+                Undertaking
+              </label>
+            </div>
+
           </div>
         </fieldset>
       </div>
@@ -106,7 +154,7 @@ h{% extends "layout.html" %}
       <button type="submit" class="govuk-button">
         Continue
       </button>
-  </form>
 
-
+      <p><a class="govuk-link" href="#">Choose a different charge category</a></p>
+      
 {% endblock %}

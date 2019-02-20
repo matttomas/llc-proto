@@ -3,7 +3,7 @@ h{% extends "layout.html" %}
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Source information - Maintain local land charges
+  Choose financial - Maintain local land charges
 {% endblock %}
 
 {% block header %}
@@ -55,64 +55,81 @@ h{% extends "layout.html" %}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-margin-top-3">
-      Source information
-    </h1>
-
-<form action="charge-description.html">
-    <p class="govuk-body"><b>Where can you find more information about this charge?</b><br>
-    This can be a department name and address and/or a link to a place where charge
-    documents are kept online, for example a planning portal.</p>
-
-    <div class="govuk-inset-text">
-      <p class="govuk-body govuk-!-margin-bottom-0">You can:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-        <li>choose a source, or</li>
-        <li>add a new source</li>
-      </ul>
-    </div>
-
-  <form>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="source">
-        Choose a source
-      </label>
-      <select class="govuk-select" id="source" name="source">
-        <option value="published">testplanning@portal.com</option>
-        <option value="published">AnotherSource@portal.com</option>
-        <option value="published">Source3@portal.com</option>
-        <option value="published">Source4@portal.com</option>
-      </select>
-    </div>
-    </form>
-
-    <p>You can edit this source before you continue.</p>
-
-    <div class="govuk-form-group">
-      <textarea class="govuk-textarea" id="source-info" name="source-info" rows="5" aria-describedby="more-detail-hint">{{data['source']}}</textarea>
-      <p>Answer must be shorter than 500 characters (about 85 words)</p>
-    </div>
-
-    <p class="govuk-body"><b>Authority reference </b>(optional)<br>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="authority-reference">
-          This is the reference used by this department when they want to find the charge record
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="authority-reference" name="authority-reference" type="text">
-      </div>
+        <fieldset class="govuk-fieldset">
+            <h2 class="govuk-heading-l">Choose another charge category</h2>
 
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Ancient monuments">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Ancient monuments
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Assets of community value">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Assets of community value
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Compulsory purchase order">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Compulsory purchase order
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Highways and paths">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Highways and paths
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Licence">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Licence
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Local acts">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Local acts
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Site of special scientific interest (SSSI)">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Site of special scientific interest (SSSI)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Smoke control order">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Smoke control order
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="Water / drainage">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                Water / drainage
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other-category-1" name="other-category" type="radio" value="I don't know the charge category">
+              <label class="govuk-label govuk-radios__label" for="other-category-1">
+                I don't know the charge category
+              </label>
+            </div>
+
+
+          </div>
+        </fieldset>
+      </div>
 
       <button type="submit" class="govuk-button">
         Continue
       </button>
-    </form>
 
-
-
-  </div>
-</div>
 {% endblock %}

@@ -61,10 +61,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Is this the charge address?</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Is this the right address for this charge?</h1>
 
     <p><b>{{ data['search-location']}}</b></p>
 
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        We need this information as the charge can have more than one address
+      </strong>
+    </div>
 
     <form action="charge-expire.html">
 

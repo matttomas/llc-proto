@@ -60,7 +60,7 @@ h{% extends "layout.html" %}
   function checkSearchForm () {
     var searchTerm = document.getElementById('search').value
 
-    if (searchTerm.length > 0) {
+    if (searchTerm.toUpperCase() == '4162/SFC') {
       // Could use checkPostcode() function here in future to route people accordingly
       return
     } else {
@@ -91,7 +91,7 @@ h{% extends "layout.html" %}
       Search by authority reference or HM Land Registry reference
     </h1>
 
-    <form action="charge-view.html" onsubmit="return checkSearchForm()">
+    <form action="charge-view-financial-2.html" onsubmit="return checkSearchForm()">
       <div class="search-bar govuk-!-margin-bottom-6">
         <div class="govuk-form-group">
           <input class="govuk-input govuk-input--width-10" id="search" name="search" type="text">

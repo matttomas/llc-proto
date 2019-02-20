@@ -3,7 +3,7 @@ h{% extends "layout.html" %}
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Search by reference - Maintain local land charges
+  Charge cancelled - Maintain local land charges
 {% endblock %}
 
 {% block header %}
@@ -55,84 +55,26 @@ h{% extends "layout.html" %}
 {% endblock %}
 
 {% block content %}
-    <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-7">
-      View local land charge
-    </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-inset-text">
-      <p><a class="govuk-link" href="#">Update charge</a></p>
-      <p><a class="govuk-link" href="#">Cancel charge</a></p>
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title govuk-!-font-size-36">
+        Charge cancelled
+      </h1>
+      <div class="govuk-panel__body govuk-!-font-size-19">
+        <b>HM Land Registry reference</b>
+        <br><strong>LLC-3FFJ</strong>
+      </div>
+      <div class="govuk-panel__body govuk-!-font-size-19">
+        <b>Keep this to help you find the charge again</b>
+      </div>
+
     </div>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <p class="govuk-body">HM Land Registry reference</P>
-        <p class="govuk-body">Category</p>
-        <p class="govuk-body">Planning category</P>
-        <p class="govuk-body">Law</p>
-        <p class="govuk-body">Legal document</P>
-        <p class="govuk-body">Description</p>
-        <p class="govuk-body">Originating authority</P>
-        <p class="govuk-body">Registered on</p>
-      </div>
+    <p><a class="govuk-link" href="harge-search-find.html">Find another local land charge</a></p>
 
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body"><b>LLC-3FFJ</b></p>
-        <p class="govuk-body"><b>Planning</b></p>
-        <p class="govuk-body"><b>Conditional planning consent</b></p>
-        <p class="govuk-body"><b>Town and Country Planning Act 1990 section 70</b></p>
-        <p class="govuk-body"><b>Planning permission</b></p>
-        <p class="govuk-body"><b>single storey extension to the rear</b></p>
-        <p class="govuk-body"><b>Exeter City Council</b></p>
-        <p class="govuk-body"><b>19 December 2018</b></p>
-        <a class="govuk-link govuk-!-margin-bottom-10" href="#">View history</a>
-      </div>
-    </div>
-
-    <br><hr><br>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <p class="govuk-body">Location</P>
-       </div>
-
-      <div class="govuk-grid-column-one-third">
-        <p class="govuk-body"><b>7 Toronto Road, Exeter, EX4 6LE</b></p>
-      </div>
-
-      <div class="govuk-grid-column-one-third">
-        <img src="/../../../public/images/toronto-road-close.png" height="150px" width="300px">
-      </div>
-    </div>
-
-        <br><hr><br>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <p class="govuk-body">Creation date</P><br>
-        <p class="govuk-body">Expiry date</p>
-      </div>
-
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body"><b>16 December 2018</b></p><br>
-        <p class="govuk-body"><b>Does not expire</b></p>
-      </div>
-    </div>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <p class="govuk-body">Source information<br><br><br><br><br></P>
-        <p class="govuk-body">Authority reference</p>
-          <a class="govuk-link" href="options.html">Return to main menu</a>
-      </div>
-
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body"><b>Exeter City Council<br>Planning Department<br>Civic Centre<br>Exeter<br>EX1 1JJ</b></p>
-        <p class="govuk-body"><b>123456</b></p>
-      </div>
-    </div>
-
-
-
-
+    <p><a class="govuk-link" href="options.html">Return to main menu</a></p>
+  </div>
+</div>
 {% endblock %}

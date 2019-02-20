@@ -77,33 +77,16 @@ function showSearch()
    document.getElementById('page_text').classList.add('govuk-visually-hidden');
 }
 
-function changeCheckbox() {
-  var planning = document.getElementById('planning')
-  var obstruction = document.getElementById('obstruction')
-  var image =  document.getElementById("map1");
+function changeCancelled() {
+  var cancelled = document.getElementById('cancelled')
 
-  if (obstruction.checked)
+  if (cancelled.checked)
   {
-    image.src = "/../../public/images/search-areas/toronto-smoke.png";
+    document.getElementById('cancelled-charge').classList.remove('govuk-visually-hidden');
   }
-    else if (planning.checked)
-    {
-      if (finance.checked)
-      {
-        image.src = "/../../public/images/search-areas/toronto-planning-finance.png";
-      }
-      else
-      {
-        image.src = "/../../public/images/search-areas/toronto-planning.png";
-      }
-    }
-    else if (finance.checked)
-    {
-      image.src = "/../../public/images/search-areas/toronto-finance.png";
-    }
     else
     {
-      image.src = "/../../public/images/search-areas/toronto-blank.png";
+      document.getElementById('cancelled-charge').classList.add('govuk-visually-hidden');
     }
 }
 
@@ -165,6 +148,7 @@ function changeCheckbox() {
     <div class="govuk-!-margin-top-4" id="page_text">
       <h3 class="govuk-heading-s">This is the map for {{ data['search-location']}}</h3>
       <p class="govuk-body-s">Use the map controls to draw an extent around the area you want to search.<br><br>You will see a list of charges in this area.</P>
+      <p class="govuk-body-s"><a href="https://preview.search-llc.landregistry.gov.uk/how-to-use-the-map" target="_blank">How to use the map</a>  (link opens in new tab)</p>
     </div>
 
     <div class=" govuk-visually-hidden" id="accordian">
@@ -197,7 +181,7 @@ function changeCheckbox() {
                   <label for="obstruction" class="govuk-body govuk-!-font-size-16">Light obstruction notice (1)</label>
                 </li>
                 <li>
-                  <input type="checkbox" id="cancelled" checked ">
+                  <input type="checkbox" id="cancelled" checked onclick="changeCancelled()">
                   <label for="obstruction" class="govuk-body govuk-!-font-size-16">Show Cancelled charges (1)</label>
                 </li>
             </div>
@@ -236,10 +220,10 @@ function changeCheckbox() {
             <div class="address">
               <ul class="govuk-list">
                   <li>
-                    <div style="background-color:#dee0e2">
-                    <span class="govuk-!-font-size-16"><b>CANCELLED</b><span><br>
-                    <a class="govuk-link" href="charge-view-financial.html">Authority reference: LLC-381YXXXXXXXXXXX</a>
-                    <p class="govuk-body-s">7 Toronto Road, Exeter</p>
+                    <div style="background-color:#dee0e2" id="cancelled-charge">
+                      <span class="govuk-!-font-size-16"><b>CANCELLED</b><span><br>
+                      <a class="govuk-link" href="charge-view-financial.html">Authority reference: LLC-381YXXXXXXXXXXX</a>
+                      <p class="govuk-body-s">7 Toronto Road, Exeter</p>
                     </div>
                   </li>
             </div>
