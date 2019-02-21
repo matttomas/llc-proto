@@ -63,7 +63,12 @@ h{% extends "layout.html" %}
     if (searchTerm.toUpperCase() == '4162/SFC') {
       // Could use checkPostcode() function here in future to route people accordingly
       return
-    } else {
+    } else if (searchTerm.toUpperCase() == '4162*'){
+      document.getElementById('wildcard').classList.remove('govuk-visually-hidden');
+      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
+      return false
+    }
+    else {
       document.getElementById('error-panel').classList.remove('govuk-visually-hidden');
       return false
     }
@@ -103,6 +108,24 @@ h{% extends "layout.html" %}
         </div>
       </div>
     </form>
+
+    <div class="govuk-!-margin-top-4 govuk-visually-hidden" id="wildcard">
+        <p><b>Your search returned multiple possible charges. Click on the required charge below -</b></p>
+      <div>
+        <ul class="govuk-list">
+          <li>
+            <a href="#">Reference number - 4162/TPO </a>
+          </li>
+          <li>
+            <a href="charge-view-financial-2.html">Reference number - 4162/SFC </a>
+          </li>
+          <li>
+            <a href="#">Reference number - 4162/SCO </a>
+          </li>
+        </ul>
+        <br>
+      </div>
+    </div>
 
     <details class="govuk-details">
       <summary class="govuk-details__summary">
