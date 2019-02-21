@@ -19,6 +19,23 @@ router.post('/maintain-service/UR-February/charge-planning', function (req, res)
 })
 
 // Add your routes here - above the module.exports line
+router.post('/maintain-service/UR-February/address-change', function (req, res) {
+
+  // Make a variable and give it the value
+  var addressOption = req.session.data['address-options']
+
+  // Check whether the variable matches a condition
+  if (addressOption == 'Yes'){
+  // Send user to next page
+    res.redirect('charge-expire')
+  }
+  else if (addressOption == 'No'){
+    // Send user to ineligible page
+    res.redirect('charge-address-change')
+  }
+})
+
+// Add your routes here - above the module.exports line
 router.post('/maintain-service/UR-February/charge-category-function', function (req, res) {
 
   // Make a variable and give it the value

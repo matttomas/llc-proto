@@ -61,18 +61,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Is there a single address for your search area?</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Does the charge have a single address?</h1>
 
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
-        <span class="govuk-warning-text__assistive">Warning</span>
-          You can't change your search area after you've paid.<br>
-          This will be used on your search result, to describe where you have searched.
-      </strong>
-    </div>
-
-    <form action="../../gov-pay1" method="post" class="govuk-!-margin-top-7">
+    <form action="charge-expire.html">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="search-area-conditional-hint">
@@ -113,7 +104,7 @@
               <div class="govuk-form-group">
                 <div class="govuk-form-group">
                     <label class="govuk-body govuk-!-font-weight-bold" for="description">
-                      Describe the area you have searched?
+                      Describe the area that the charge covers
                     </label>
                     <span id="description-hint" class="govuk-hint">
                       For example, 'flats 1-5 Church Lane' or 'land to the north of the bypass'.
@@ -130,12 +121,6 @@
           </div>
         </fieldset>
       </div>
-
-      <p class="govuk-body">
-        Your payment will be processed by our payment service provider,
-        WorldPay, through GOV.UK Pay. You should refer to the Privacy Notices of those organisations
-        for details of how your personal data is used.
-      </p>
 
       <button type="submit" class="govuk-button">
         Continue
