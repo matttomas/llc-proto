@@ -7,6 +7,43 @@ h{% extends "layout.html" %}
 {% endblock %}
 
 {% block header %}
+
+<script>
+
+  function checkSearchForm () {
+    var searchTerm = document.getElementById('search').value
+
+    if (searchTerm == 'EX4 1AY')
+    {
+      document.getElementById('results-list-okehampton').classList.remove('govuk-visually-hidden');
+      document.getElementById('results-list-exeter').classList.add('govuk-visually-hidden');
+      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
+       return false
+    }
+    else if (searchTerm == 'Cheynegate Lane')
+    {
+      document.getElementById('results-list-exeter').classList.remove('govuk-visually-hidden');
+      document.getElementById('results-list-okehampton').classList.add('govuk-visually-hidden');
+      document.getElementById('error-panel').classList.add('govuk-visually-hidden');
+       return false
+    }
+    else {
+      document.getElementById('error-panel').classList.remove('govuk-visually-hidden');
+      return false
+    }
+  }
+
+
+function fillText()
+
+{var sourceInfo =  document.getElementById("source").value;
+
+  document.getElementById("source-info").value = sourceInfo;
+}
+
+</script>
+
+
   <header class="govuk-header " role="banner" data-module="header">
     <div class="govuk-header__container govuk-width-container">
 
@@ -75,19 +112,18 @@ h{% extends "layout.html" %}
       </ul>
     </div>
 
-  <form>
+  <form action="charge-description.html">
     <div class="govuk-form-group">
       <label class="govuk-label" for="source">
         Choose a source
       </label>
-      <select class="govuk-select" id="source" name="source">
-        <option value="published">testplanning@portal.com</option>
-        <option value="published">AnotherSource@portal.com</option>
-        <option value="published">Source3@portal.com</option>
-        <option value="published">Source4@portal.com</option>
+      <select class="govuk-select" id="source" name="source" onchange="fillText()">
+        <option value="testplanning@portal.com">testplanning@portal.com</option>
+        <option value="AnotherSource@portal.com">AnotherSource@portal.com</option>
+        <option value="Source3@portal.com">Source3@portal.com</option>
+        <option value="Source4@portal.com">Source4@portal.com</option>
       </select>
     </div>
-    </form>
 
     <p>You can edit this source before you continue.</p>
 
