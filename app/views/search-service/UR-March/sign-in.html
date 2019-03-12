@@ -3,7 +3,7 @@ h{% extends "layout.html" %}
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Choose category - Maintain local land charges
+  Sign in - Search for a local land charge
 {% endblock %}
 
 {% block header %}
@@ -27,8 +27,8 @@ h{% extends "layout.html" %}
       </div>
       <div class="govuk-header__content">
 
-        <a href="options.html" class="govuk-header__link govuk-header__link--service-name">
-          Maintain LLC
+        <a href="start.html" class="govuk-header__link govuk-header__link--service-name">
+          Search for local land charges
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
@@ -55,58 +55,54 @@ h{% extends "layout.html" %}
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">Sign in</h1>
+
+    <form action="search-history.html">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-            <h2 class="govuk-heading-l">Choose a charge category</h2>
+        <label class="govuk-label govuk-!-width-one-half" for="one-half">
+          Email
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+      </div>
 
-          <form action="charge-category-function" method="post">
-
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-1" name="charge-category" type="radio" value="Planning" {{checked("charge-category", "Planning")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-1">
-                Planning
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-2" name="charge-category" type="radio" value="Financial" {{checked("charge-category", "Financial")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-2">
-                Financial
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="listed building" {{checked("charge-category", "listed building")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Listed building
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="Land compensation" {{checked("charge-category", "Land compensation")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Land compensation
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="Housing" {{checked("charge-category", "Housing")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Housing
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="Other" {{checked("charge-category", "Other")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Other
-              </label>
-            </div>
-          </div>
-        </fieldset>
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <label class="govuk-label govuk-!-width-one-half" for="one-half">
+          Password
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
       </div>
 
       <button type="submit" class="govuk-button">
-        Continue
+        Sign in
       </button>
-  </form>
+
+    </form>
+
+    <div>
+      <h2  class="govuk-heading-m">Problems signing in?</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="forgot-password.html">I forgot my password</a>
+        </li>
+      </ul>
+      <h2  class="govuk-heading-m">Don't have an account?</h2>
+      <p class="govuk-body govuk-!-margin-0">An account will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>allow you to manage your search results</li>
+        <li>not be used for marketing purposes</li>
+        <li>allow us to keep in contact about system updates</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-margin-0"><a href="register.html" class="govuk-link">Create an account</a></p>
+      <p class="govuk-body"><a href="search.html" class="govuk-link">Continue as guest</a></p>
 
 
+
+    </div>
+
+  </div>
+</div>
 {% endblock %}

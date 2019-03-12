@@ -1,0 +1,52 @@
+{% extends "layout-unbranded.html" %}
+
+{% block pageTitle %}
+  Prototype - Local Land Charges
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+{% block main %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-padding-top-5">UR March 2019</h1>
+
+      <h3 clas="govuk-heading-s"><a class="govuk-link" href="/search-service/UR-March/start.html">View Prototype</a><span class="completed govuk-!-margin-3">Tested</span></h3>
+
+      <h2 class="govuk-heading-m">Summary of Changes</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>New buttons added to search screen to expand/ contract charge area</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Search screen changes</h3>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">New button design</h3>
+      <img src="/../../public/images/docs/search-march-2019/expand-contract-buttons.png" height="75%" width="75%">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s">New design</h3>
+      <img src="/../../public/images/docs/search-march-2019/expand-charge2.png" height="75%" width="75%">
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3">
+        <li>Search using <b>'EX4 1AY'</b></li>
+        <li>Clicking '+' button will increase charge but set amount</li>
+        <li>Clicking '-' button will increase charge but set amount</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

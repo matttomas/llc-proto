@@ -3,7 +3,7 @@ h{% extends "layout.html" %}
 {% from "table/macro.njk" import govukTable %}
 
 {% block pageTitle %}
-  Choose category - Maintain local land charges
+  Check if your authority has moved to this register
 {% endblock %}
 
 {% block header %}
@@ -27,8 +27,8 @@ h{% extends "layout.html" %}
       </div>
       <div class="govuk-header__content">
 
-        <a href="options.html" class="govuk-header__link govuk-header__link--service-name">
-          Maintain LLC
+        <a href="start.html" class="govuk-header__link govuk-header__link--service-name">
+          Search for local land charges
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
@@ -55,58 +55,66 @@ h{% extends "layout.html" %}
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-            <h2 class="govuk-heading-l">Choose a charge category</h2>
+    <h1 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">Check if your authority has moved to this register</h1>
 
-          <form action="charge-category-function" method="post">
+    <div class="govuk-inset-text">
+      If you don't know which local authority your search area belongs to, you can find out
+      <a class="govuk-link" href="">here</a> (this link will open in a new tab or window).
+    </div>
 
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-1" name="charge-category" type="radio" value="Planning" {{checked("charge-category", "Planning")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-1">
-                Planning
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-2" name="charge-category" type="radio" value="Financial" {{checked("charge-category", "Financial")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-2">
-                Financial
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="listed building" {{checked("charge-category", "listed building")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Listed building
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="Land compensation" {{checked("charge-category", "Land compensation")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Land compensation
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-3" name="charge-category" type="radio" value="Housing" {{checked("charge-category", "Housing")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-3">
-                Housing
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="charge-category-4" name="charge-category" type="radio" value="Other" {{checked("charge-category", "Other")}}>
-              <label class="govuk-label govuk-radios__label" for="charge-category-4">
-                Other
-              </label>
-            </div>
-          </div>
-        </fieldset>
+    <form action="javascript:checkAuthority()">
+
+      <label class="govuk-label">Enter an authority name to search</label>
+      <div class="search-bar govuk-!-margin-bottom-5">
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-full" id="authority" name="test" type="text">
+        </div>
+        <div class="search-bar-input">
+          <button type="submit" class="search-button" role="button">
+            <span class="govuk-visually-hidden">Search</span>
+          </button>
+        </div>
       </div>
+    </form>
 
-      <button type="submit" class="govuk-button">
-        Continue
-      </button>
-  </form>
+    <div class="govuk-visually-hidden" id="migrated">
+      <h2 class="govuk-heading-s">Exeter City Council is on the register.</h2>
+      <p class="govuk-body">By using the service you agree to our
+        <a href="https://search-local-land-charges.service.gov.uk/terms-of-use" class="govuk-link">terms of use</a>.
+      </p>
 
+      <form action="search.html">
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
 
+    <div class="govuk-visually-hidden" id="non-migrated">
+      <h2 class="govuk-heading-s"><span id="council"></span> is not on the register yet.</h2>
+      <p class="govuk-body">Contact this authority to complete your search.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    function checkAuthority () {
+      var authority = document.getElementById('authority').value.toLowerCase();
+      if (authority == 'exeter') {
+        document.getElementById('migrated').classList.remove('govuk-visually-hidden');
+        document.getElementById('non-migrated').classList.add('govuk-visually-hidden');
+      } else{
+        document.getElementById('non-migrated').classList.remove('govuk-visually-hidden');
+        document.getElementById('migrated').classList.add('govuk-visually-hidden');
+        document.getElementById('council').innerHTML=authority;
+      }
+    }
+  </script>
 {% endblock %}
