@@ -27,16 +27,16 @@ h{% extends "layout.html" %}
       </div>
       <div class="govuk-header__content">
 
-        <a href="start.html" class="govuk-header__link govuk-header__link--service-name">
-          Search for local land charges
+        <a href="options.html" class="govuk-header__link govuk-header__link--service-name">
+          Maintain LLC
         </a>
 
         <a class="govuk-header__link header_link_right govuk-!-padding-top-1" href="register.html">
-          Register
+          Sign out
         </a>
 
         <a class="govuk-!-margin-right-3 govuk-header__link header_link_right govuk-!-padding-top-1" href="sign-in.html">
-          Ernest Shackleton
+          LA Admin
         </a>
 
       </div>
@@ -76,43 +76,48 @@ h{% extends "layout.html" %}
                 <td class="govuk-table__cell">05/06/2018</td>
               </tr>
             </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLJ</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2, as shown edged green on the plan.</td>
+                <td class="govuk-table__cell">21/01/2019</td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLM</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2, as shown edged green on the plan.</td>
+                <td class="govuk-table__cell">21/01/2019</td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLN</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2, as shown edged green on the plan.</td>
+                <td class="govuk-table__cell">21/01/2019</td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLK</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2, as shown edged green on the plan.</td>
+                <td class="govuk-table__cell">21/01/2019</td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLG</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2</td>
+                <td class="govuk-table__cell">26/01/2019</td>
+              </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">LLC-4VLF</th>
+                <td class="govuk-table__cell">2 and 3 Finsbury Avenue EC2</td>
+                <td class="govuk-table__cell">26/01/2019</td>
+              </tr>
+            </tbody>
           </table>
 
-{% endblock %}
-
-
-{% block scripts %}
-  {{ super() }}
-  <script>
-    $('.view-searches-button').on('click', function(e) {
-      e.preventDefault()
-      var $target = $(this).closest('tr').nextUntil('.parent-row')
-      if($target.hasClass('govuk-visually-hidden')) {
-          $(this).find('.button-text').text('Hide searches');
-      } else {
-          $(this).find('.button-text').text('View searches');
-      }
-      $target.toggleClass('govuk-visually-hidden')
-      $(this).find('.search-toggle-button').toggleClass('search-toggle-button-expanded')
-
-    })
-
-    // $('.view-searches').on('click', function(e) {
-    //   e.preventDefault()
-    //   $(this).closest('tr').nextUntil('.parent-row').toggleClass('govuk-visually-hidden')
-    //   $(this).toggleClass('row-toggle-button-expanded')
-    // })
-
-    function checkSearchForm () {
-      var searchTerm = document.getElementById('search').value
-
-      if (searchTerm.length > 0) {
-        // Could use checkPostcode() function here in future to route people accordingly
-        return
-      } else {
-        return false
-      }
-    }
-
-  </script>
 {% endblock %}
